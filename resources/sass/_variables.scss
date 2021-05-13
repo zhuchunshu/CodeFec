@@ -1,0 +1,79 @@
+.hljs {
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.sticky {
+    position: sticky;
+    position: -webkit-sticky;
+}
+
+.rd {
+    height: 100%;
+    display: flow-root;
+}
+// choices__list
+/* 滚动槽 */
+.overflow-auto::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.overflow-auto::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0);
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0);
+}
+
+/* 滚动条滑块 */
+.overflow-auto::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.vditor-reset::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.vditor-reset::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0);
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0);
+}
+
+/* 滚动条滑块 */
+.vditor-reset::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+//choices__list
+
+.choices__list::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.choices__list::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0);
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0);
+}
+
+/* 滚动条滑块 */
+.choices__list::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.btn{
+    margin-top: 2px;
+}
+.lg-icon {
+    background-color: transparent;
+    border-style: none;
+}
