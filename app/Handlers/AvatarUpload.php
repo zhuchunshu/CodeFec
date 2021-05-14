@@ -13,7 +13,7 @@ class AvatarUpload
     {
         // 构建存储的文件夹规则，值如：uploads/images/avatars/201709/21/
         // 文件夹切割能让查找效率更高。
-        $folder_name = "uploads/images/$folder/" . date("Ym/d", time());
+        $folder_name = "upload/images/$folder/" . date("Ym/d", time());
 
         // 文件具体存储的物理路径，`public_path()` 获取的是 `public` 文件夹的物理路径。
         // 值如：/home/vagrant/Code/larabbs/public/uploads/images/avatars/201709/21/

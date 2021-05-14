@@ -276,9 +276,29 @@ class PluginController extends Controller
             //关闭
             $zip->close();
             File::delete($path);
-            return Json_Api(true,"插件安装成功!","success");
+            return response()->json([
+                'status' => true,
+                'data' => [
+                    'message' => "插件安装成功!",
+                    "type" => 'success',
+                    "then" => [
+                        "action" => "redirect",
+                        "value" => admin_url("Plugin")
+                    ]
+                ],
+            ]);
         } else {
-            return Json_Api(true,"插件上传失败!","error");
+            return response()->json([
+                'status' => false,
+                'data' => [
+                    'message' => "插件安装失败!",
+                    "type" => 'error',
+                    "then" => [
+                        "action" => "redirect",
+                        "value" => admin_url("Plugin/create")
+                    ]
+                ],
+            ]);
         }
     }
 
