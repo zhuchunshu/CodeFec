@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "525d06e17d7c0c6e5fa46429b8a9fcad",
+    "content-hash": "ae89a754808f63d33877f02ee2e763a0",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2214,23 +2214,17 @@
         },
         {
             "name": "laravel/octane",
-            "version": "v0.5.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/octane.git",
-                "reference": "c681350e5494c9ed15744a3fc07d714a7d363dfb"
+                "reference": "3ab6e1c221659a2ad0ead019ccbcc151a0e6ae06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/octane/zipball/c681350e5494c9ed15744a3fc07d714a7d363dfb",
-                "reference": "c681350e5494c9ed15744a3fc07d714a7d363dfb",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "url": "https://api.github.com/repos/laravel/octane/zipball/3ab6e1c221659a2ad0ead019ccbcc151a0e6ae06",
+                "reference": "3ab6e1c221659a2ad0ead019ccbcc151a0e6ae06",
+                "shasum": ""
             },
             "require": {
                 "laminas/laminas-diactoros": "^2.5",
@@ -2254,12 +2248,15 @@
             ],
             "type": "library",
             "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                },
                 "laravel": {
                     "providers": [
                         "Laravel\\Octane\\OctaneServiceProvider"
                     ],
                     "aliases": {
-                        "Octane": "Laravel\\Octane\\OctaneFacade"
+                        "Octane": "Laravel\\Octane\\Facades\\Octane"
                     }
                 }
             },
@@ -2289,7 +2286,7 @@
                 "issues": "https://github.com/laravel/octane/issues",
                 "source": "https://github.com/laravel/octane"
             },
-            "time": "2021-05-04T16:28:04+00:00"
+            "time": "2021-05-18T15:40:42+00:00"
         },
         {
             "name": "laravel/tinker",
