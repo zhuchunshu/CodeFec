@@ -299,13 +299,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/jqhph/dcat-admin/zipball/76772c5387328bebf7904464956a6ebf1fa6dc35",
                 "reference": "76772c5387328bebf7904464956a6ebf1fa6dc35",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "shasum": ""
             },
             "require": {
                 "laravel/framework": "~5.5|~6.0|~7.0|~8.0",

@@ -73,7 +73,7 @@
                             </div>
                             {{-- 高级选项 --}}
 
-                            @include('posts.create.gaoji')
+                            
                         
                             <div class="col-md-12">
                                 <button class="btn btn-blue" type="submit">提交更改</button>
