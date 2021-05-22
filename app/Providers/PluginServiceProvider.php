@@ -6,6 +6,7 @@ use App\Models\Plugin;
 use Illuminate\Support\Arr;
 use Illuminate\Routing\Router;
 use App\Services\PluginManager;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\ServiceProvider;
 
 class PluginServiceProvider extends ServiceProvider

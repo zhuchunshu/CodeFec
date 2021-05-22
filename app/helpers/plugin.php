@@ -53,8 +53,20 @@ function plugin_path($name)
  */
 function plugin_asset_path($name, $file)
 {
-    return "/Plugins" . $name . "/assets/" . $file;
+    return "/Plugins/" . $name . "/assets/" . $file;
 }
+/**
+ * 获取插件资源网址
+ *
+ * @param string 插件目录名 $name
+ * @param string 文件路径 $file
+ * @return void
+ */
+function plugin_asset($name, $file)
+{
+    return asset("/Plugins/" . $name . "/assets/" . $file);
+}
+
 /**
  * 获取插件资源网址
  *
@@ -64,7 +76,7 @@ function plugin_asset_path($name, $file)
  */
 function plugin_asset_asset($name, $file)
 {
-    return asset("/Plugins" . $name . "/assets/" . $file);
+    return asset("/Plugins/" . $name . "/assets/" . $file);
 }
 
 /**

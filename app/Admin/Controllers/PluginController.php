@@ -234,6 +234,7 @@ class PluginController extends Controller
             if ($status) {
                 $ev = "启用";
             } else {
+                File::deleteDirectory(public_path("Plugins/".$name));
                 $ev = "禁用";
             }
         } else {
@@ -243,6 +244,7 @@ class PluginController extends Controller
                 'status' => $status,
                 'created_at' => date("Y-m-d H:i:s")
             ]);
+            File::deleteDirectory(public_path("Plugins/".$name));
             $ev = "禁用";
         }
         Artisan::call("Plugin:Publish");
@@ -271,7 +273,6 @@ class PluginController extends Controller
         $zip = new ZipArchive();
         //打开压缩文件，打开成功时返回true
         if ($zip->open($path) === true) {
-            //解压文件到获得的路径a文件夹下
             $zip->extractTo(app_path("Plugins/"));
             //关闭
             $zip->close();

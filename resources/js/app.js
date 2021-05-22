@@ -26,4 +26,4 @@ if (comment_themes_view_rtop===true) {
     // 一键回顶部
     addBackToTop()
 }
-console.log("%cCodeFec 论坛程序 https://www.codefec.com","color:#ffffff; font-size:25px; display: block;height: 100vh;width: 100vw;background-color: #232e3c")
+console.log("%cCodeFec 开源程序 https://github.com/zhuchunshu/CodeFec","color:#ffffff; font-size:25px; display: block;height: 100vh;width: 100vw;background-color: #232e3c")

@@ -3,6 +3,7 @@
 namespace App\Console\Commands\CodeFec;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Artisan;
 
 class PluginPublish extends Command
