@@ -61,6 +61,13 @@ class PluginServiceProvider extends ServiceProvider
             if(Arr::has($value['data'],'middleware')){
                 $this->RegMiddleware($value['data']['middleware']);
             }
+
+            // 实现分组中间件
+            if(Arr::has($value['data'],'middlewareGroup')){
+                foreach ($value['data']['middlewareGroup'] as $mg_name => $mg_value) {
+                    $this->mixMiddlewareGroup($mg_name,$mg_value);
+                }
+            }
         }
     }
 
@@ -85,5 +92,43 @@ class PluginServiceProvider extends ServiceProvider
             $router = $this->app->make(Router::class);
             $router->aliasMiddleware($index, $value);
         }
+    }
+
+    /**
+     * 往分组插入中间件.
+     *
+     * @param array $mix
+     */
+    public static function mixMiddlewareGroup($name,array $mix = [])
+    {
+        $router = app('router');
+
+        $group = $router->getMiddlewareGroups()[$name] ?? [];
+
+        if ($mix) {
+            $finalGroup = [];
+
+            foreach ($group as $i => $mid) {
+                $next = $i + 1;
+
+                $finalGroup[] = $mid;
+
+                if (! isset($group[$next])) {
+                    continue;
+                }
+
+                $finalGroup = array_merge($finalGroup, $mix);
+
+                $mix = [];
+            }
+
+            if ($mix) {
+                $finalGroup = array_merge($finalGroup, $mix);
+            }
+
+            $group = $finalGroup;
+        }
+
+        $router->middlewareGroup($name, $group);
     }
 }
