@@ -77,6 +77,9 @@ class Install extends Command
                 Artisan::call('key:generate');
                 $this->info('配置成功! 如果需要修改配置请编辑网站根目录下.env文件');
                 $this->info('请重新运行脚本进行数据库迁移');
+                $this->error('请重新运行脚本进行数据库迁移');
+                $this->error('请重新运行脚本进行数据库迁移');
+                $this->error('请重新运行脚本进行数据库迁移');
             } else {
                 Artisan::call('migrate --force');
                 $this->info('数据库迁移成功!');
@@ -119,6 +122,13 @@ class Install extends Command
                 ]);
                 Artisan::call("CodeFec:AdminInit");
                 $this->info("创建完毕");
+                if ($this->confirm('您是用的国内服务器吗?')) {
+                    $url = "https://e.coding.net/codefec/codefec/CodeFec-Public.git";
+                }else{
+                    $url = "https://github.com/zhuchunshu/CodeFec-Public.git";
+                }
+                shell_exec("git clone ".$url." ".public_path("publics"));
+                $this->info("public 资源克隆成功");
                 $this->info('本次安装结束。');
                 $this->info("请按照教程进行下一步操作, 然后访问: " . config('app.url') . "/" . $pre . " 进入管理后台");
             }
