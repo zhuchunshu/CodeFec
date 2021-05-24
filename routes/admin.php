@@ -25,6 +25,9 @@ Route::get('/setting', [AdminViewController::class,'setting'])->name('setting');
 Route::get('/', function(){
     return redirect(admin_url());
 })->name('gadmin'); //站点设置
+Route::get('/horizon', function(){
+    return redirect(url("/admin/horizon"));
+})->name('horizon');
 Route::post('/setting/save', [PostController::class,'setting_save'])->name('setting.save'); //保存站点设置
 
 

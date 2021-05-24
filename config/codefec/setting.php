@@ -10,6 +10,13 @@ return [
             "首页 - 标题前显示标签" => "view_home_title_tag_show",
             "全局 - 节点区块" => "view_common_node_show",
             "全局 - 标签区块" => "view_common_tag_show",
+        ],
+        // 高级设置
+        "pro" => [
+            "图片设置" => [
+                'description' => "logo、随机图片等多项内容设置管理",
+                "route" => "admin.setting.pro.image"
+            ]
         ]
     ]
 ];

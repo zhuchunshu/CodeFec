@@ -6,14 +6,9 @@ use App\Models\User;
 use App\Models\Links;
 use App\Models\Topic;
 use App\Models\UserGroup;
-use App\Models\Collections;
-use Illuminate\Http\Request;
-use App\Models\Collections_class;
 use App\Http\Controllers\Controller;
 use App\Models\PostsComment;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Cache;
 
 class ViewController extends Controller
 {

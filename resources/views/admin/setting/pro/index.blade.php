@@ -4,19 +4,21 @@
 @section('content')
 <div class="container-xl">
     <div class="row row-cards">
+        @foreach (config('codefec.setting.admin.pro') as $name => $array)
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    图片设置
+                    {{ $name }}
                 </div>
                 <div class="card-body">
-                    logo、随机图片等多项内容设置管理
+                    {{ $array['description'] }}
                 </div>
                 <div class="card-footer">
-                    <a href="{{ route('admin.setting.pro.image') }}" class="btn btn-indigo">前往</a>
+                    <a href="{{ route($array['route']) }}" class="btn btn-indigo">前往</a>
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
 </div>
 @endsection

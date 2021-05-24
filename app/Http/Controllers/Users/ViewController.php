@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Users;
 
 use App\Models\User;
-use App\Models\Report;
 use App\Http\Controllers\Controller;
 use App\Models\Dengji_log;
 use App\Models\User_Notice;

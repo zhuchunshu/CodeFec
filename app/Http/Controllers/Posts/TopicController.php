@@ -12,14 +12,11 @@ use App\Models\Posts_type;
 use Illuminate\Support\Str;
 use App\Models\PostsComment;
 use Illuminate\Http\Request;
-use App\Models\Topic_Options;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Create\DarftRequest;
 use App\Http\Requests\Create\TopicRequest;
 use App\Http\Requests\Posts\Topic\EditSave;
-use App\Http\Requests\Posts\Topic\ReComment;
-use App\Http\Requests\Posts\Topic\CommentRequest;
 
 class TopicController extends Controller
 {
