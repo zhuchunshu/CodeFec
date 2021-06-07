@@ -245,7 +245,7 @@ class PluginController extends Controller
                 'created_at' => date("Y-m-d H:i:s")
             ]);
             File::deleteDirectory(public_path("Plugins/".$name));
-            $ev = "禁用";
+            $ev = "启用";
         }
         Artisan::call("Plugin:Publish");
         Artisan::call("CodeFec:octane:reload");
