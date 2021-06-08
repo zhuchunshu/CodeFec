@@ -131,7 +131,7 @@
                                 </li>
                             @endif
                         @endif
-                        @if ($value['type'] == 'dropdown')
+                        @if ($value['type'] == 'dropdown' && @count($value['li']))
                             @if (@$value['quanxian'])
                                 @if (Auth::user() && Curd_UserGroup()->Read_id(Auth::user()->user_group)['quanxian'] >= $value['quanxian'])
                                     <li class="nav-item dropdown">
@@ -170,40 +170,42 @@
                                     </li>
                                 @endif
                             @else
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown"
-                                        role="button" aria-expanded="false">
-                                        <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                            {!! $value['icon'] !!}
-                                        </span>
-                                        <span class="nav-link-title">
-                                            {{ $key }}
-                                        </span>
-                                    </a>
-                                    <div class="dropdown-menu">
-                                        <div class="dropdown-menu-columns">
-                                            <div class="dropdown-menu-column">
-                                                @foreach ($value['li'] as $keys => $values)
-                                                    @if (is_array($values))
-                                                        @if (@$values['quanxian'])
-                                                            @if (Auth::user() && Curd_UserGroup()->Read_id(Auth::user()->user_group)['quanxian'] >= $values['quanxian'])
-                                                                <a class="dropdown-item @if (route_name()==$values['route']){{ 'active' }}@endif"
-                                                                    href="{{ route($values['route']) }}">
-                                                                    {{ $keys }}
-                                                                </a>
-                                                            @endif
+                            @if(@count($value['li']))
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown"
+                                    role="button" aria-expanded="false">
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                        {!! $value['icon'] !!}
+                                    </span>
+                                    <span class="nav-link-title">
+                                        {{ $key }}
+                                    </span>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <div class="dropdown-menu-columns">
+                                        <div class="dropdown-menu-column">
+                                            @foreach ($value['li'] as $keys => $values)
+                                                @if (is_array($values))
+                                                    @if (@$values['quanxian'])
+                                                        @if (Auth::user() && Curd_UserGroup()->Read_id(Auth::user()->user_group)['quanxian'] >= $values['quanxian'])
+                                                            <a class="dropdown-item @if (route_name()==$values['route']){{ 'active' }}@endif"
+                                                                href="{{ route($values['route']) }}">
+                                                                {{ $keys }}
+                                                            </a>
                                                         @endif
-                                                    @else
-                                                        <a class="dropdown-item @if (route_name()==$values['route']){{ 'active' }}@endif"
-                                                            href="{{ route($values) }}">
-                                                            {{ $keys }}
-                                                        </a>
                                                     @endif
-                                                @endforeach
-                                            </div>
+                                                @else
+                                                    <a class="dropdown-item @if (route_name()==$values['route']){{ 'active' }}@endif"
+                                                        href="{{ route($values) }}">
+                                                        {{ $keys }}
+                                                    </a>
+                                                @endif
+                                            @endforeach
                                         </div>
                                     </div>
-                                </li>
+                                </div>
+                            </li>
+                            @endif
                             @endif
                         @endif
                     @endforeach
