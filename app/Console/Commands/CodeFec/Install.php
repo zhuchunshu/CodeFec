@@ -127,7 +127,7 @@ class Install extends Command
                 }else{
                     $url = "https://github.com/zhuchunshu/CodeFec-Public.git";
                 }
-                shell_exec("git clone ".$url." ".base_path("public"));
+                shell_exec("mkdir public && git clone ".$url." ".base_path("public"));
                 $this->info("public 资源克隆成功");
                 $this->info('本次安装结束。');
                 $this->info("请按照教程进行下一步操作, 然后访问: " . config('app.url') . "/" . $pre . " 进入管理后台");
