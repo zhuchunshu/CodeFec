@@ -66,6 +66,10 @@ return [
                 'route' => 'admin.horizon',
                 'quanxian' => 999,
             ],
+            'telescope' => [
+                'route' => 'admin.telescope',
+                'quanxian' => 999,
+            ],
             '高级设置' => [
                 'route' => 'admin.setting.pro.index',
                 'quanxian' => 999,

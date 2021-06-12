@@ -26,8 +26,13 @@ Route::get('/', function(){
     return redirect(admin_url());
 })->name('gadmin'); //站点设置
 Route::get('/horizon', function(){
-    return redirect(url("/admin/horizon"));
+    return redirect(url("/".config("horizon.path")));
 })->name('horizon');
+
+Route::get('/telescope', function(){
+    return redirect(url("/".config("telescope.path")));
+})->name('telescope');
+
 Route::post('/setting/save', [PostController::class,'setting_save'])->name('setting.save'); //保存站点设置
 
 
