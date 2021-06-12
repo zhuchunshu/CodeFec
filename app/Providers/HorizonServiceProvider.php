@@ -2,10 +2,8 @@
 
 namespace App\Providers;
 
-use App\Models\User;
-use App\Models\UserGroup;
-use Laravel\Horizon\Horizon;
 use Illuminate\Support\Facades\Gate;
+use Laravel\Horizon\Horizon;
 use Laravel\Horizon\HorizonApplicationServiceProvider;
 
 class HorizonServiceProvider extends HorizonApplicationServiceProvider
@@ -36,9 +34,9 @@ class HorizonServiceProvider extends HorizonApplicationServiceProvider
     protected function gate()
     {
         Gate::define('viewHorizon', function ($user) {
-            $upid = UserGroup::where('quanxian',999)->first()->id;
-            $arr = User::where('user_group',$upid)->get();
-            return in_array($user->email, $arr);
+            return in_array($user->id, [
+                1
+            ]);
         });
     }
 }
