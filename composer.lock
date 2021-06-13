@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "03639b084c759dc8ba4b30914114d45e",
+    "content-hash": "827ddac071f22a197bd3530e7e9ac7bb",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2208,17 +2208,23 @@
         },
         {
             "name": "laravel/octane",
-            "version": "v1.0.1",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/octane.git",
-                "reference": "3ab6e1c221659a2ad0ead019ccbcc151a0e6ae06"
+                "reference": "46ef9bd1fca6193206b7c255f531cc8250fb9775"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/octane/zipball/3ab6e1c221659a2ad0ead019ccbcc151a0e6ae06",
-                "reference": "3ab6e1c221659a2ad0ead019ccbcc151a0e6ae06",
-                "shasum": ""
+                "url": "https://api.github.com/repos/laravel/octane/zipball/46ef9bd1fca6193206b7c255f531cc8250fb9775",
+                "reference": "46ef9bd1fca6193206b7c255f531cc8250fb9775",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "laminas/laminas-diactoros": "^2.5",
@@ -2280,7 +2286,7 @@
                 "issues": "https://github.com/laravel/octane/issues",
                 "source": "https://github.com/laravel/octane"
             },
-            "time": "2021-05-18T15:40:42+00:00"
+            "time": "2021-06-08T14:37:39+00:00"
         },
         {
             "name": "laravel/telescope",
@@ -7350,16 +7356,16 @@
     "packages-dev": [
         {
             "name": "barryvdh/laravel-debugbar",
-            "version": "v3.5.5",
+            "version": "v3.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "6420113d90bb746423fa70b9940e9e7c26ebc121"
+                "reference": "f6f0f895a33cac801286a74355d146bb5384a5da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/6420113d90bb746423fa70b9940e9e7c26ebc121",
-                "reference": "6420113d90bb746423fa70b9940e9e7c26ebc121",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/f6f0f895a33cac801286a74355d146bb5384a5da",
+                "reference": "f6f0f895a33cac801286a74355d146bb5384a5da",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -7425,7 +7431,7 @@
             ],
             "support": {
                 "issues": "https://github.com/barryvdh/laravel-debugbar/issues",
-                "source": "https://github.com/barryvdh/laravel-debugbar/tree/v3.5.5"
+                "source": "https://github.com/barryvdh/laravel-debugbar/tree/v3.6.1"
             },
             "funding": [
                 {
@@ -7433,7 +7439,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-04-07T11:19:20+00:00"
+            "time": "2021-06-02T06:42:22+00:00"
         },
         {
             "name": "doctrine/instantiator",
