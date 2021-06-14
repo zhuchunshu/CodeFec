@@ -30,7 +30,6 @@ return [
 
     'env' => env('APP_ENV', 'production'),
 
-    'domain' => env('App_DOMAIN','codefec.com'),
 
     /*
     |--------------------------------------------------------------------------
