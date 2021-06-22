@@ -152,9 +152,10 @@ return [
     */
 
     'tables' => [
-        'example:1000' => [
+        'options:10000' => [
             'name' => 'string:1000',
-            'votes' => 'int',
+            'value' => 'string:1000',
+            'class' => 'string:100'
         ],
     ],
 

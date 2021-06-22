@@ -2,7 +2,9 @@
 
 namespace App\Handlers\Models;
 
+use Illuminate\Support\Facades\Cache;
 use App\Models\Options as ModelsOptions;
+use Illuminate\Support\Facades\Redis;
 
 class Options{
 
@@ -22,6 +24,8 @@ class Options{
             'created_at' => date("Y-m-d H:i:s")
         ]);
         if($id){
+            $data = ModelsOptions::where("id",$id)->first();
+            Redis::setex('options:'.$class.'.'.$name,600,$data->value);
             return $id;
         }else{
             return null;
@@ -39,6 +43,8 @@ class Options{
         ModelsOptions::where(['name' => $name,'class' => $class])->update([
             'value' => $value
         ]);
+        $data = ModelsOptions::where(['name' => $name,'class' => $class])->first();
+        Redis::setex('options:'.$class.'.'.$name,600,$data->value);
     }
     /**
      * 通过id更新Options
@@ -62,7 +68,11 @@ class Options{
      */
     public function Read_name(string $name,string $class,string $default=NULL){
         if($this->Count_name($name,$class)){
-            return ModelsOptions::where(['name' => $name,'class' => $class])->first()['value'];
+            if(!Redis::get('options:'.$class.'.'.$name)){
+                Redis::setex('options:'.$class.'.'.$name,600,ModelsOptions::where(['name' => $name,'class' => $class])->first()['value']);
+                //Cache::put('options.'.$class.'.'.$name, ModelsOptions::where(['name' => $name,'class' => $class])->first()['value'], 600);
+            }
+            return Redis::get('options:'.$class.'.'.$name);
         }else{
             return $default;
         }
@@ -83,11 +93,18 @@ class Options{
      * @return void
      */
     public function Count_name(string $name,string $class){
-        if(ModelsOptions::where(['name' => $name,'class' => $class])->count()){
-            return true;
-        }else{
-            return false;
+        
+
+        if(!Redis::get("options:count.".$class.".".$name)){
+            if(ModelsOptions::where(['name' => $name,'class' => $class])->count()){
+                $result = 1;
+            }else{
+                $result = 0;
+            }
+            Redis::setex("options:count.".$class.".".$name,600,$result);
         }
+        return Redis::get("options:count.".$class.".".$name);
+
     }
     /**
      * 更新或新增
