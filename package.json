@@ -47,6 +47,7 @@
         "pjax": "^0.2.8",
         "sweetalert": "^2.1.2",
         "vanilla-back-to-top": "^7.2.1",
-        "vditor": "^3.8.1"
+        "vditor": "^3.8.1",
+        "vue": "^3.1.2"
     }
 }

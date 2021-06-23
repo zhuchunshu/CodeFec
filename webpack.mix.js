@@ -12,6 +12,7 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    .js('resources/js/vue.js','public/js')
     .js('resources/js/create/topic.js', 'public/js/create')
     .js('resources/js/reply/topic.js', 'public/js/reply')
     .js('resources/js/reply/recomment.js', 'public/js/reply')
