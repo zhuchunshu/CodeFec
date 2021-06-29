@@ -57,7 +57,7 @@ function Curd_UserGroup()
  */
 function avatar(string $email)
 {
-    return 'https://cdn.vpsdie.com/avatar/' . md5($email) . "?codefec=" . date("Ymd");
+    return 'https://sdn.geekzu.org/avatar/' . md5($email) . "?codefec=" . date("Ymd");
 }
 
 /**
