@@ -1,10 +1,11 @@
 {
-    "name": "laravel/laravel",
+    "name": "zhuchunshu/codefec",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "The CodeFec",
     "keywords": [
         "framework",
-        "laravel"
+        "laravel",
+        "codefec"
     ],
     "license": "MIT",
     "require": {
